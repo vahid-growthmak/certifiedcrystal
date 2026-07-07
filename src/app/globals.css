@@ -99,6 +99,11 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 .cc-btn--outline { background: transparent; color: var(--brand); }
 .cc-btn--outline:hover { background: var(--brand); color: #fff; }
 
+/* Light variant — white pill with maroon text (for use on dark/maroon backgrounds).
+   Double-class selector so it reliably beats the base .cc-btn background. */
+.cc-btn.cc-btn--light { background: #fff; color: var(--brand); border-color: #fff; }
+.cc-btn.cc-btn--light:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
+
 /* Small "View All" link-button */
 .cc-viewall {
   display: inline-flex; align-items: center; gap: 6px;
