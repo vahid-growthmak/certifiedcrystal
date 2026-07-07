@@ -2,7 +2,10 @@ import { PhoneIcon, WhatsAppIcon } from "@/components/icons";
 
 export default function FloatingButtons() {
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-3">
+    <div
+      className="fixed right-5 z-50 flex flex-col gap-3 transition-[bottom] duration-300 ease-out"
+      style={{ bottom: "calc(1.25rem + var(--sticky-bar-h, 0px))" }}
+    >
       <a
         href="https://wa.me/919810800550"
         target="_blank"

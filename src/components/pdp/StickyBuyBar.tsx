@@ -9,11 +9,26 @@ export default function StickyBuyBar({ product }: { product: Product }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 600);
+    const onScroll = () => {
+      const doc = document.documentElement;
+      const nearBottom =
+        window.scrollY + window.innerHeight >= doc.scrollHeight - 160;
+      setVisible(window.scrollY > 600 && !nearBottom);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
+
+  // Publish bar height so the floating buttons can lift above it.
+  useEffect(() => {
+    document.documentElement.style.setProperty("--sticky-bar-h", visible ? "68px" : "0px");
+    return () => document.documentElement.style.setProperty("--sticky-bar-h", "0px");
+  }, [visible]);
 
   return (
     <div
@@ -21,7 +36,7 @@ export default function StickyBuyBar({ product }: { product: Product }) {
         visible ? "translate-y-0" : "translate-y-full"
       }`}
     >
-      <div className="cc-container flex items-center gap-3 py-2.5 pr-[76px] sm:pr-5">
+      <div className="cc-container flex items-center gap-3 py-2.5">
         <img
           src={product.images[0]}
           alt={product.title}
@@ -31,10 +46,9 @@ export default function StickyBuyBar({ product }: { product: Product }) {
           <p className="truncate text-[13px] font-medium text-heading">{product.title}</p>
           <p className="text-[14px] font-bold text-heading">{formatPrice(product.price)}</p>
         </div>
-        <button type="button" className="cc-btn shrink-0 px-5 py-2.5 text-[14px]">
+        <button type="button" className="cc-btn shrink-0 px-4 py-2.5 text-[14px] sm:px-5">
           <CartIcon width={16} height={16} />
-          <span className="hidden sm:inline">Add to Cart</span>
-          <span className="sm:hidden">Add</span>
+          Add to Cart
         </button>
       </div>
     </div>
