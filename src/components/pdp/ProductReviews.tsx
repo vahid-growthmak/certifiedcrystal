@@ -15,14 +15,14 @@ function Stars({ rating, size = 15 }: { rating: number; size?: number }) {
 
 function ReviewCard({ r }: { r: Review }) {
   return (
-    <article className="flex h-full flex-col rounded-[14px] border border-line bg-white p-5">
+    <article className="flex h-full flex-col cc-card p-5">
       <Stars rating={r.rating} size={14} />
       <p className="mt-2.5 text-[15px] font-semibold text-heading">{r.title}</p>
       <p className="mt-1 flex-1 text-[14px] leading-relaxed text-foreground">{r.body}</p>
       <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-line pt-3">
         <span className="text-[13.5px] font-semibold text-heading">{r.name}</span>
         {r.verified && (
-          <span className="rounded-full bg-brand/10 px-2 py-0.5 text-[10.5px] font-semibold text-brand">
+          <span className="rounded-[4px] bg-green/10 px-2 py-0.5 text-[10.5px] font-medium text-green">
             Verified Buyer
           </span>
         )}
@@ -67,9 +67,9 @@ export default function ProductReviews({ product }: { product: Product }) {
         Customer Reviews
       </h2>
 
-      <div className="mt-5 flex flex-col gap-5 rounded-[16px] border border-line bg-white p-6 md:flex-row md:items-center md:gap-8">
+      <div className="mt-5 flex flex-col gap-5 cc-card p-6 md:flex-row md:items-center md:gap-8">
         <div className="flex flex-col items-start gap-1 md:min-w-[180px]">
-          <span className="text-[44px] font-bold leading-none text-heading">{product.rating.toFixed(1)}</span>
+          <span className="text-[44px] font-medium leading-none text-heading">{product.rating.toFixed(1)}</span>
           <Stars rating={product.rating} size={18} />
           <span className="text-[13px] text-muted">Based on {product.reviewCount} reviews</span>
         </div>

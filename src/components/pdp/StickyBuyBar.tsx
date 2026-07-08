@@ -40,7 +40,7 @@ export default function StickyBuyBar({ product }: { product: Product }) {
         <img
           src={product.images[0]}
           alt={product.title}
-          className="hidden h-11 w-11 shrink-0 rounded-[8px] border border-line object-cover sm:block"
+          className="hidden h-11 w-11 shrink-0 rounded-[4px] border border-line object-cover sm:block"
         />
         <div className="min-w-0 flex-1">
           <p className="truncate text-[13px] font-medium text-heading">{product.title}</p>

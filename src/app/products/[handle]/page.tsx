@@ -13,6 +13,7 @@ import BuyBox from "@/components/pdp/BuyBox";
 import ProductTabs from "@/components/pdp/ProductTabs";
 import CertificationModule from "@/components/pdp/CertificationModule";
 import ProductReviews from "@/components/pdp/ProductReviews";
+import ProductFAQ from "@/components/pdp/ProductFAQ";
 import StickyBuyBar from "@/components/pdp/StickyBuyBar";
 import RecentlyViewed from "@/components/pdp/RecentlyViewed";
 import CtaBand from "@/components/CtaBand";
@@ -83,7 +84,7 @@ export default async function ProductPage({ params }: PageProps) {
         {/* Above the fold: gallery + buy box */}
         <div className="cc-container">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-8 md:items-start lg:gap-12">
-            <ProductGallery images={product.images} title={product.title} />
+            <ProductGallery images={product.images} title={product.title} onSale={!!product.compareAt} />
             <BuyBox product={product} />
           </div>
         </div>
@@ -121,6 +122,11 @@ export default async function ProductPage({ params }: PageProps) {
             </div>
           </div>
         )}
+
+        {/* FAQ */}
+        <div className="cc-container mt-16 md:mt-20">
+          <ProductFAQ faq={product.faq} />
+        </div>
 
         {/* Recently viewed */}
         <div className="cc-container mt-16 md:mt-20">

@@ -16,7 +16,7 @@ export default function BrandStory() {
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Image */}
           <div className="cc-fade-up order-1">
-            <div className="overflow-hidden rounded-[18px] border border-line bg-white">
+            <div className="overflow-hidden rounded-[8px] border border-line bg-white">
               <img
                 src="/img/watchbuy/RSQRTZOSP-FX-2_1024.png"
                 alt="Natural certified crystal, hand-selected and cleansed"

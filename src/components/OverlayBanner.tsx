@@ -10,13 +10,7 @@ export default function OverlayBanner() {
   return (
     <section aria-labelledby="overlay-banner-heading" className="py-8 md:py-14">
       <div className="cc-container">
-        <div
-          className="relative overflow-hidden rounded-[16px]"
-          style={{
-            background:
-              "linear-gradient(105deg, #5f2b38 0%, #6f3444 42%, #a06a54 78%, #c19a5b 100%)",
-          }}
-        >
+        <div className="relative overflow-hidden rounded-[8px] bg-brand">
           <div className="flex flex-col items-start gap-6 px-6 py-8 sm:px-8 md:flex-row md:items-center md:justify-between md:px-12 md:py-12">
             {/* Text */}
             <div className="max-w-[560px]">

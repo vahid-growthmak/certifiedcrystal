@@ -36,15 +36,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1.3fr] lg:gap-8">
           {/* Brand column */}
           <div>
-            <span className="inline-flex rounded-md bg-white p-3">
-              <img
-                src="/img/footer/Certified_Crystal_logo_800.jpg"
-                alt="Certified Crystal"
-                width={160}
-                height={64}
-                className="h-14 w-auto"
-              />
-            </span>
+            <a
+              href="/"
+              className="inline-flex items-baseline"
+              aria-label="Certified Crystal home"
+            >
+              <span className="font-heading text-[22px] font-semibold uppercase leading-none tracking-[0.02em] text-white">
+                Certified Crystal
+              </span>
+              <span className="ml-0.5 text-[26px] font-bold leading-none text-gold">
+                .
+              </span>
+            </a>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/75">
               Authentic, lab-tested natural crystals — an independent
               certificate with every order.
@@ -142,7 +145,7 @@ export default function Footer() {
                 name="email"
                 required
                 placeholder="Your email address"
-                className="min-h-[44px] w-full rounded-[30px] border border-white/25 bg-white/10 px-4 text-sm text-white placeholder:text-white/50 focus:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                className="min-h-[46px] w-full rounded-[4px] border border-white/25 bg-white/10 px-4 text-sm text-white placeholder:text-white/50 focus:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
               />
               <button
                 type="submit"
@@ -185,7 +188,7 @@ export default function Footer() {
             {PAYMENTS.map((p) => (
               <span
                 key={p}
-                className="rounded-md bg-white/10 px-2.5 py-1 text-[11px] font-medium text-white/85"
+                className="rounded-[4px] bg-white/10 px-2.5 py-1 text-[11px] font-medium text-white/85"
               >
                 {p}
               </span>

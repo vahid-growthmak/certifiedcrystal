@@ -18,7 +18,7 @@ export default function FloatingButtons() {
       <a
         href="tel:+919810800550"
         aria-label="Call us"
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-brand text-white shadow-lg shadow-black/20 transition-transform duration-150 ease-out hover:scale-110 focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-brand"
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-heading text-white shadow-lg shadow-black/20 transition-transform duration-150 ease-out hover:scale-110 hover:bg-gold hover:text-heading focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-heading"
       >
         <PhoneIcon width={22} height={22} />
       </a>

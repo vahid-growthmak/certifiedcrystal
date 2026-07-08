@@ -83,7 +83,7 @@ export default function Testimonials() {
             {TESTIMONIALS.map((t) => (
               <article
                 key={t.name + t.product}
-                className="flex w-[280px] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-line bg-background sm:w-[320px]"
+                className="cc-card flex w-[280px] shrink-0 snap-start flex-col overflow-hidden sm:w-[320px]"
                 aria-label="Customer testimonial"
               >
                 <div className="aspect-square overflow-hidden">

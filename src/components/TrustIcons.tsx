@@ -50,8 +50,8 @@ export default function TrustIcons() {
               key={title}
               className="flex flex-col items-center px-1 text-center sm:px-2"
             >
-              <span className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-white text-brand shadow-sm sm:mb-4 sm:h-16 sm:w-16">
-                <Icon aria-hidden="true" />
+              <span className="mb-3 flex items-center justify-center text-heading sm:mb-4">
+                <Icon aria-hidden="true" width={40} height={40} />
               </span>
               <h3 className="mb-1.5 text-[13.5px] font-medium leading-snug text-heading sm:mb-2 sm:text-[17px]">
                 {title}

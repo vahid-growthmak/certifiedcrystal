@@ -3,12 +3,12 @@ import { CertificateIcon, ArrowRight } from "@/components/icons";
 export default function CertificationModule() {
   return (
     <section id="certification" aria-labelledby="certification-heading">
-      <div className="flex flex-col items-start gap-5 rounded-[18px] bg-surface-cream p-7 sm:flex-row sm:items-center sm:p-9">
+      <div className="flex flex-col items-start gap-5 rounded-[6px] bg-surface-cream p-7 sm:flex-row sm:items-center sm:p-9">
         <div className="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-white text-brand shadow-sm">
           <CertificateIcon width={40} height={40} />
         </div>
         <div className="flex flex-col gap-2">
-          <h2 id="certification-heading" className="text-[24px] font-semibold text-heading">
+          <h2 id="certification-heading" className="text-[24px] font-medium text-heading">
             Lab-Tested &amp; NABL-Certified
           </h2>
           <p className="max-w-2xl text-[15px] leading-relaxed text-foreground">

@@ -1,4 +1,4 @@
-// Reusable maroon closing-CTA band. Used on the homepage (after reviews) and the PDP.
+// Reusable Hongo dark closing-CTA band. Used on the homepage (after reviews) and the PDP.
 export default function CtaBand({
   heading,
   sub,
@@ -12,8 +12,8 @@ export default function CtaBand({
 }) {
   return (
     <section className="cc-container my-16 md:my-24">
-      <div className="flex flex-col items-center gap-4 rounded-[20px] bg-brand px-6 py-14 text-center md:py-20">
-        <h2 className="max-w-[600px] text-[26px] font-semibold leading-tight text-white md:text-[34px]">
+      <div className="flex flex-col items-center gap-4 rounded-[8px] bg-brand px-6 py-14 text-center md:py-20">
+        <h2 className="max-w-[600px] text-[26px] font-medium leading-tight text-white md:text-[34px]">
           {heading}
         </h2>
         {sub && (

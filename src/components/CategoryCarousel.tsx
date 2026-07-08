@@ -67,7 +67,7 @@ export default function CategoryCarousel({
                 href={item.href}
                 className="group flex shrink-0 snap-start flex-col items-center gap-3 focus-visible:outline-none"
               >
-                <div className="relative h-[110px] w-[110px] overflow-hidden rounded-full ring-1 ring-line transition-all duration-200 group-hover:scale-105 group-hover:ring-2 group-hover:ring-gold group-focus-visible:ring-2 group-focus-visible:ring-brand md:h-[150px] md:w-[150px]">
+                <div className="relative h-[110px] w-[110px] overflow-hidden rounded-full bg-white shadow-[0_4px_16px_rgba(0,0,0,0.08)] ring-1 ring-line transition-all duration-200 group-hover:scale-105 group-hover:shadow-[0_8px_22px_rgba(0,0,0,0.12)] group-hover:ring-2 group-hover:ring-gold group-focus-visible:ring-2 group-focus-visible:ring-brand md:h-[150px] md:w-[150px]">
                   <img
                     src={item.img}
                     alt={item.label}

@@ -61,7 +61,7 @@ function Section({
         aria-expanded={open}
         className="flex w-full items-center justify-between gap-4 py-4 text-left"
       >
-        <span className="flex items-center gap-2.5 text-[17px] font-semibold text-heading">{title}</span>
+        <span className="flex items-center gap-2.5 text-[17px] font-medium text-heading">{title}</span>
         <ChevronDown
           width={18}
           height={18}
@@ -106,7 +106,7 @@ export default function ProductTabs({ product }: { product: Product }) {
   const d = product.details;
 
   return (
-    <div className="rounded-[16px] border border-line bg-white px-5 sm:px-7">
+    <div className="rounded-[6px] border border-line bg-white px-5 sm:px-7">
       <Section title="Description" open={!!open.description} onToggle={() => toggle("description")}>
         <p>{product.description}</p>
         <p className="mt-3 font-semibold text-heading">How to use</p>
@@ -177,7 +177,7 @@ export default function ProductTabs({ product }: { product: Product }) {
           </li>
         </ol>
 
-        <div className="mt-5 overflow-hidden rounded-[10px] border border-line">
+        <div className="mt-5 overflow-hidden rounded-[6px] border border-line">
           <table className="w-full border-collapse text-[14px]">
             <thead>
               <tr className="bg-surface-cream text-left text-[12.5px] uppercase tracking-wide text-muted">
@@ -196,7 +196,7 @@ export default function ProductTabs({ product }: { product: Product }) {
           </table>
         </div>
 
-        <p className="mt-4 rounded-[10px] border-l-4 border-brand bg-surface-cream px-4 py-3 text-[13.5px] leading-relaxed text-foreground">
+        <p className="mt-4 rounded-[6px] border-l-[3px] border-brand bg-surface-cream px-4 py-3 text-[13.5px] leading-relaxed text-foreground">
           {reassurance(product.category)}
         </p>
       </Section>

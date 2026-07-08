@@ -17,6 +17,9 @@ export default function QuizBanner() {
       {/* Centered content */}
       <div className="relative flex h-full items-center justify-center">
         <div className="cc-container flex flex-col items-center text-center">
+          <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-gold sm:text-[13px]">
+            Crystal Quiz
+          </p>
           <h2
             id="quiz-banner-heading"
             className="max-w-[720px] text-[24px] font-medium leading-tight text-white md:text-[35px]"
@@ -27,7 +30,7 @@ export default function QuizBanner() {
             Answer a few quick questions about the mood and intention you&apos;re
             after, and we&apos;ll match you to a crystal you&apos;ll love.
           </p>
-          <a href="/pages/crystal-match" className="cc-btn mt-5 md:mt-6">
+          <a href="/pages/crystal-match" className="cc-btn cc-btn--light mt-5 md:mt-6">
             Go to Quiz
           </a>
         </div>

@@ -43,13 +43,6 @@ const TABS: { label: string; products: Product[] }[] = [
         price: "Rs. 990",
         compareAt: "Rs. 1,500",
       },
-      {
-        title: "Amethyst Chip Bracelet",
-        href: "/products/amethyst-chip-bracelet",
-        img: "/img/featured/amthest_br_1024.jpg",
-        price: "Rs. 690",
-        compareAt: "Rs. 990",
-      },
     ],
   },
   {
@@ -160,7 +153,7 @@ export default function FeaturedProducts() {
         <div
           role="tablist"
           aria-label="Featured product categories"
-          className="mb-8 flex flex-wrap items-center justify-center gap-2 md:mb-10 md:gap-3"
+          className="mb-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 md:mb-10 md:gap-x-9"
         >
           {TABS.map((tab, i) => {
             const selected = i === active;
@@ -170,13 +163,17 @@ export default function FeaturedProducts() {
                 role="tab"
                 aria-selected={selected}
                 onClick={() => setActive(i)}
-                className={`rounded-full border px-5 py-2 text-[14px] font-medium transition-all duration-150 md:text-[15px] ${
-                  selected
-                    ? "border-brand bg-brand text-white"
-                    : "border-line bg-white text-heading hover:border-brand hover:text-brand"
+                className={`relative pb-2 text-[14px] font-medium transition-colors duration-150 md:text-[15px] ${
+                  selected ? "text-heading" : "text-muted hover:text-heading"
                 }`}
               >
                 {tab.label}
+                <span
+                  aria-hidden="true"
+                  className={`absolute inset-x-0 -bottom-px h-[2px] origin-center bg-brand transition-transform duration-200 ${
+                    selected ? "scale-x-100" : "scale-x-0"
+                  }`}
+                />
               </button>
             );
           })}

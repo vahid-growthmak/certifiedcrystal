@@ -103,9 +103,9 @@ export default function WatchAndBuy() {
                 key={r.video}
                 href={r.href}
                 aria-label={r.title}
-                className="group relative w-[72%] shrink-0 snap-start overflow-hidden rounded-[16px] sm:w-[46%] md:w-[31%] lg:w-[23%]"
+                className="group relative w-[72%] shrink-0 snap-start overflow-hidden rounded-[6px] sm:w-[46%] md:w-[31%] lg:w-[23%]"
               >
-                <div className="relative aspect-[9/16] w-full overflow-hidden rounded-[16px] bg-black">
+                <div className="relative aspect-[9/16] w-full overflow-hidden rounded-[6px] bg-black">
                   <video
                     ref={(el) => {
                       videoRefs.current[i] = el;
@@ -124,11 +124,11 @@ export default function WatchAndBuy() {
 
                   {/* product overlay */}
                   <div className="absolute inset-x-2.5 bottom-2.5">
-                    <div className="flex items-center gap-2.5 rounded-[12px] bg-black/40 p-2 backdrop-blur-sm">
+                    <div className="flex items-center gap-2.5 rounded-[6px] bg-black/45 p-2 backdrop-blur-sm">
                       <img
                         src={r.poster}
                         alt=""
-                        className="h-11 w-11 shrink-0 rounded-[8px] border border-white/20 object-cover"
+                        className="h-11 w-11 shrink-0 rounded-[4px] border border-white/20 object-cover"
                       />
                       <div className="min-w-0 flex-1">
                         <p className="truncate text-[13px] font-medium leading-tight text-white">{r.title}</p>
@@ -139,7 +139,7 @@ export default function WatchAndBuy() {
                           )}
                         </p>
                       </div>
-                      <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-white text-brand transition-colors group-hover:bg-gold group-hover:text-white">
+                      <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-white text-brand transition-colors group-hover:bg-gold group-hover:text-heading">
                         <ArrowRight width={16} height={16} />
                       </span>
                     </div>

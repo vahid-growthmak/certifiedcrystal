@@ -14,6 +14,18 @@ import {
   CloseIcon,
 } from "@/components/icons";
 
+/** Hongo-style text wordmark: bold uppercase Jost + a yellow dot accent. */
+function Wordmark({ className = "" }: { className?: string }) {
+  return (
+    <span className={`inline-flex items-baseline whitespace-nowrap ${className}`}>
+      <span className="font-heading font-semibold uppercase leading-none tracking-[0.02em] text-heading">
+        Certified Crystal
+      </span>
+      <span className="ml-0.5 font-bold leading-none text-gold">.</span>
+    </span>
+  );
+}
+
 export default function Header() {
   const [stuck, setStuck] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -48,34 +60,36 @@ export default function Header() {
       <header
         className={[
           "left-0 top-0 z-40 w-full bg-white transition-shadow duration-200",
-          stuck ? "fixed shadow-[0_4px_18px_rgba(0,0,0,0.08)]" : "relative",
+          stuck
+            ? "fixed shadow-[0_1px_18px_rgba(0,0,0,0.07)]"
+            : "relative border-b border-line",
         ].join(" ")}
       >
         {/* ── Top row ── */}
-        <div className="cc-container flex items-center gap-4 py-3 lg:py-4">
+        <div className="cc-container flex items-center gap-4 py-3.5 lg:py-4">
           {/* Mobile hamburger */}
           <button
             type="button"
             aria-label="Open menu"
             onClick={() => setDrawerOpen(true)}
-            className="grid h-11 w-11 shrink-0 place-items-center text-heading lg:hidden"
+            className="grid h-11 w-11 shrink-0 place-items-center text-heading transition-colors hover:text-gold lg:hidden"
           >
             <MenuIcon />
           </button>
 
-          {/* Logo */}
-          <a href="/" className="shrink-0" aria-label="Certified Crystal home">
-            <img
-              src="/img/footer/Certified_Crystal_logo_800.jpg"
-              alt="Certified Crystal"
-              className="h-[54px] w-auto object-contain"
-            />
+          {/* Logo wordmark */}
+          <a
+            href="/"
+            className="shrink-0"
+            aria-label="Certified Crystal home"
+          >
+            <Wordmark className="text-[19px] sm:text-[22px] lg:text-[24px]" />
           </a>
 
-          {/* Search (desktop / tablet) */}
+          {/* Search (desktop / tablet) — Hongo: light-grey squared input */}
           <form
             role="search"
-            className="ml-2 hidden flex-1 items-center gap-2 rounded-full border border-line bg-surface-cream px-4 md:flex"
+            className="ml-6 mr-6 hidden max-w-[820px] flex-1 items-center gap-2 rounded-[4px] border border-line bg-surface-cream px-4 transition-colors focus-within:border-heading md:flex"
             onSubmit={(e) => e.preventDefault()}
           >
             <SearchIcon className="shrink-0 text-muted" />
@@ -85,52 +99,60 @@ export default function Header() {
             <input
               id="site-search"
               type="search"
-              placeholder="I'm looking for…"
-              className="h-9 w-full bg-transparent text-[15px] text-heading outline-none placeholder:text-muted"
+              placeholder="Search for crystals, bracelets…"
+              className="h-10 w-full bg-transparent text-[14px] text-heading outline-none placeholder:text-muted"
             />
           </form>
 
-          {/* Right cluster */}
-          <div className="ml-auto flex items-center gap-4 lg:gap-5">
+          {/* Right cluster — icon + label actions */}
+          <div className="ml-auto flex items-center gap-4 lg:gap-6">
             <a
               href="tel:+919810800550"
-              className="hidden items-center gap-2 text-[13px] leading-tight text-heading xl:flex"
+              className="hidden items-center gap-2 text-[13px] leading-tight text-heading transition-colors hover:text-gold xl:flex"
             >
-              <PhoneIcon width={20} height={20} className="text-brand" />
+              <PhoneIcon width={20} height={20} />
               <span>
                 <span className="block text-muted">Call Now</span>
-                <span className="font-semibold">+91 98108-00550</span>
+                <span className="font-medium">+91 98108-00550</span>
               </span>
             </a>
 
             <a
               href="/account"
               aria-label="Account"
-              className="hidden text-heading transition-colors hover:text-brand sm:block"
+              className="hidden flex-col items-center gap-0.5 text-heading transition-colors hover:text-gold sm:flex"
             >
               <UserIcon />
+              <span className="text-[11px] font-medium leading-none">
+                Account
+              </span>
             </a>
 
             <a
               href="/wishlist"
               aria-label="Wishlist"
-              className="hidden text-heading transition-colors hover:text-brand sm:block"
+              className="hidden flex-col items-center gap-0.5 text-heading transition-colors hover:text-gold sm:flex"
             >
               <HeartIcon />
+              <span className="text-[11px] font-medium leading-none">
+                Wishlist
+              </span>
             </a>
 
             <a
               href="/cart"
               aria-label="Cart, Rs.0"
-              className="flex items-center gap-2 text-heading transition-colors hover:text-brand"
+              className="flex flex-col items-center gap-0.5 text-heading transition-colors hover:text-gold"
             >
               <span className="relative">
                 <CartIcon />
-                <span className="absolute -right-2 -top-2 grid h-[18px] min-w-[18px] place-items-center rounded-full bg-brand px-1 text-[11px] font-semibold text-white">
+                <span className="absolute -right-2 -top-2 grid h-[18px] min-w-[18px] place-items-center rounded-full bg-gold px-1 text-[11px] font-semibold text-heading">
                   0
                 </span>
               </span>
-              <span className="hidden text-[14px] font-medium lg:inline">Rs.0</span>
+              <span className="hidden text-[11px] font-medium leading-none sm:inline">
+                Cart
+              </span>
             </a>
           </div>
         </div>
@@ -139,7 +161,7 @@ export default function Header() {
         <div className="cc-container pb-3 md:hidden">
           <form
             role="search"
-            className="flex items-center gap-2 rounded-full border border-line bg-surface-cream px-4"
+            className="flex items-center gap-2 rounded-[4px] border border-line bg-surface-cream px-4 transition-colors focus-within:border-heading"
             onSubmit={(e) => e.preventDefault()}
           >
             <SearchIcon className="shrink-0 text-muted" />
@@ -149,8 +171,8 @@ export default function Header() {
             <input
               id="site-search-mobile"
               type="search"
-              placeholder="I'm looking for…"
-              className="h-9 w-full bg-transparent text-[15px] text-heading outline-none placeholder:text-muted"
+              placeholder="Search for crystals, bracelets…"
+              className="h-10 w-full bg-transparent text-[14px] text-heading outline-none placeholder:text-muted"
             />
           </form>
         </div>
@@ -170,7 +192,7 @@ export default function Header() {
                 <li key={item.label} className="group relative">
                   <a
                     href={item.href}
-                    className="flex items-center gap-1 px-4 py-3 text-[14px] font-medium text-heading transition-colors group-hover:text-brand"
+                    className="relative flex items-center gap-1 px-4 py-3.5 text-[14px] font-medium uppercase tracking-[0.02em] text-heading transition-colors after:absolute after:inset-x-4 after:bottom-2.5 after:h-px after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-200 group-hover:after:scale-x-100"
                   >
                     {item.label}
                     {hasMenu && (
@@ -185,7 +207,7 @@ export default function Header() {
                         alignRight ? "right-0" : "left-0",
                       ].join(" ")}
                     >
-                      <div className="max-h-[70vh] w-[min(760px,90vw)] overflow-auto rounded-lg border border-line bg-white p-6 shadow-[0_12px_40px_rgba(0,0,0,0.12)]">
+                      <div className="max-h-[70vh] w-[min(760px,90vw)] overflow-auto rounded-[6px] border border-line bg-white p-6 shadow-[0_16px_44px_rgba(0,0,0,0.10)]">
                         <ul
                           className="[column-gap:24px]"
                           style={{
@@ -201,7 +223,7 @@ export default function Header() {
                             <li key={s.label} className="break-inside-avoid">
                               <a
                                 href={s.href}
-                                className="block rounded px-2 py-1.5 text-[14px] text-heading transition-colors hover:bg-surface-cream hover:text-brand"
+                                className="block rounded-[4px] px-2 py-1.5 text-[14px] text-heading transition-colors hover:bg-surface-cream hover:text-gold-dark"
                               >
                                 {s.label}
                               </a>
@@ -233,16 +255,12 @@ export default function Header() {
           {/* Panel */}
           <div className="absolute left-0 top-0 flex h-full w-[86%] max-w-[360px] flex-col bg-white shadow-2xl">
             <div className="flex items-center justify-between border-b border-line px-5 py-4">
-              <img
-                src="/img/footer/Certified_Crystal_logo_800.jpg"
-                alt="Certified Crystal"
-                className="h-10 w-auto object-contain"
-              />
+              <Wordmark className="text-[18px]" />
               <button
                 type="button"
                 aria-label="Close menu"
                 onClick={() => setDrawerOpen(false)}
-                className="grid h-11 w-11 place-items-center text-heading"
+                className="grid h-11 w-11 place-items-center text-heading transition-colors hover:text-gold"
               >
                 <CloseIcon />
               </button>
@@ -263,13 +281,13 @@ export default function Header() {
                             onClick={() =>
                               setOpenAccordion(open ? null : item.label)
                             }
-                            className="flex w-full items-center justify-between px-5 py-4 text-left text-[15px] font-medium text-heading"
+                            className="flex w-full items-center justify-between px-5 py-4 text-left text-[15px] font-medium uppercase tracking-[0.02em] text-heading"
                           >
                             {item.label}
                             <ChevronRight
                               className={[
                                 "transition-transform duration-200",
-                                open ? "rotate-90" : "",
+                                open ? "rotate-90 text-gold" : "",
                               ].join(" ")}
                             />
                           </button>
@@ -278,7 +296,7 @@ export default function Header() {
                               <li>
                                 <a
                                   href={item.href}
-                                  className="block px-7 py-2 text-[14px] font-medium text-brand"
+                                  className="block px-7 py-2 text-[14px] font-medium text-gold-dark"
                                   onClick={() => setDrawerOpen(false)}
                                 >
                                   View all
@@ -301,7 +319,7 @@ export default function Header() {
                       ) : (
                         <a
                           href={item.href}
-                          className="block px-5 py-4 text-[15px] font-medium text-heading"
+                          className="block px-5 py-4 text-[15px] font-medium uppercase tracking-[0.02em] text-heading"
                           onClick={() => setDrawerOpen(false)}
                         >
                           {item.label}

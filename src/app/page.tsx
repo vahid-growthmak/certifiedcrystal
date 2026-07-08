@@ -4,53 +4,53 @@ import Hero from "@/components/Hero";
 import TrustIcons from "@/components/TrustIcons";
 import CrystalsForEveryJourney from "@/components/CrystalsForEveryJourney";
 import FeaturedProducts from "@/components/FeaturedProducts";
+import StonesForEveryIntention from "@/components/StonesForEveryIntention";
 import QuizBanner from "@/components/QuizBanner";
-import OverlayBanner from "@/components/OverlayBanner";
-import BrandStory from "@/components/BrandStory";
-import WatchAndBuy from "@/components/WatchAndBuy";
 import GiftingOccasion from "@/components/GiftingOccasion";
+import WatchAndBuy from "@/components/WatchAndBuy";
 import Testimonials from "@/components/Testimonials";
 import CtaBand from "@/components/CtaBand";
+import HelpCenter from "@/components/HelpCenter";
 import WellnessNote from "@/components/WellnessNote";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 
-// Homepage modelled on gorjana.com's lean, editorial, CTA-led journey:
-// hero (with CTAs) → benefits → category tiles → bestsellers → editorial blocks
-// → brand/story → shoppable → gifting → reviews. Compliance note kept near the footer.
+// Homepage flow modelled on astrotalk.store:
+// hero → USP strip → shop-by categories → bestsellers → shop-by-purpose → discovery
+// → gifting → why-us → shoppable + reviews → one-promise CTA → FAQ.
 export default function Home() {
   return (
     <>
       <TopBar />
       <Header />
       <main className="flex-1">
-        {/* 1. Hero with clear CTAs */}
+        {/* 1. Hero slideshow */}
         <Hero />
-        {/* 2. Benefits / trust strip */}
+        {/* 2. USP / benefits strip */}
         <TrustIcons />
-        {/* 3. Shop by category tiles */}
+        {/* 3. Shop by Crystals */}
         <CrystalsForEveryJourney />
-        {/* 4. Bestsellers */}
+        {/* 4. Best Sellers */}
         <FeaturedProducts />
-        {/* 5. Guided discovery — crystal personality quiz */}
+        {/* 5. Shop by Purpose */}
+        <StonesForEveryIntention />
+        {/* 6. Guided discovery — crystal quiz */}
         <QuizBanner />
-        {/* 6. Editorial value-prop block + CTA */}
-        <OverlayBanner />
-        {/* 6. Brand story (also our Delhi & Gurugram stores) */}
-        <BrandStory />
-        {/* 7. Shoppable */}
-        <WatchAndBuy />
-        {/* 8. Gifting */}
+        {/* 7. Gifting / combos */}
         <GiftingOccasion />
-        {/* 9. Reviews */}
+        {/* 8. Shoppable video (kept in the reviews area) */}
+        <WatchAndBuy />
+        {/* 10. What our customers say */}
         <Testimonials />
-        {/* 10. Closing CTA */}
+        {/* 11. One Purchase. One Promise. */}
         <CtaBand
           heading="Ready to find your crystal?"
           sub="Genuine, lab-tested natural stones — each with an independent certificate of authenticity."
           cta="Shop the Collection"
           href="/collections/all"
         />
+        {/* 12. FAQs */}
+        <HelpCenter />
         {/* Compliance note */}
         <WellnessNote />
       </main>

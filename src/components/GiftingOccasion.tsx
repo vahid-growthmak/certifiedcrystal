@@ -41,9 +41,9 @@ export default function GiftingOccasion() {
             <li key={o.label} className="cc-fade-up">
               <a
                 href={o.href}
-                className="group block overflow-hidden rounded-[16px] border border-line"
+                className="cc-card group block p-2"
               >
-                <div className="relative aspect-[4/5] overflow-hidden bg-surface-cream">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[10px] bg-surface-cream">
                   <img
                     src={o.img}
                     alt={`${o.label} gifting — ${o.line}`}

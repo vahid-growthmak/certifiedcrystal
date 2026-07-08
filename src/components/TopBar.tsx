@@ -32,26 +32,26 @@ export default function TopBar() {
   }, []);
 
   return (
-    <div className="bg-brand text-white">
-      <div className="cc-container flex h-[41px] items-center justify-between text-[13px]">
-        {/* Left links — hidden on mobile */}
-        <nav aria-label="Utility navigation" className="hidden md:flex items-center gap-6">
+    <div className="bg-heading text-white">
+      <div className="cc-container relative flex h-9 items-center justify-center text-[12px] tracking-[0.01em]">
+        {/* Left links — hidden on mobile, absolutely positioned so the offer stays centered */}
+        <nav
+          aria-label="Utility navigation"
+          className="absolute left-5 hidden items-center gap-6 md:flex"
+        >
           {LINKS.map((l) => (
             <a
               key={l.label}
               href={l.href}
-              className="text-white/85 transition-colors hover:text-white"
+              className="text-white/70 transition-colors hover:text-gold"
             >
               {l.label}
             </a>
           ))}
         </nav>
 
-        {/* Rotating offer — centered on desktop, full width on mobile */}
-        <p
-          className="flex-1 text-center md:flex-none md:text-right"
-          aria-live="polite"
-        >
+        {/* Rotating offer — always centered */}
+        <p className="text-center text-white/90" aria-live="polite">
           <span
             className="inline-block transition-opacity duration-300 ease-out"
             style={{ opacity: show ? 1 : 0 }}
